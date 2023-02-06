@@ -10,20 +10,20 @@ public class Main {
 
     public static void main(String[] args) throws IOException
     {
-        String regexp = REGEXP_CONST;
-        Integer dt=0;
+        String regExp = REGEXP_CONST;
+        Integer intSum=0;
         System.out.print("Введите текст:");
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        String[] arr = reader.readLine().split(" ");
-        for(String line: arr){
-            Pattern pattern = Pattern.compile(regexp);
-            Matcher matcher = pattern.matcher(line);
+        String[] arraySplitText = reader.readLine().split(" ");
+        for(String splitText: arraySplitText){
+            Pattern pattern = Pattern.compile(regExp);
+            Matcher matcher = pattern.matcher(splitText);
             while (matcher.find()) {
-                String sm = (matcher.group(0));
-                dt=dt+Integer.valueOf(sm);
+                String sMatchGroup = (matcher.group(0));
+                intSum=intSum+Integer.valueOf(sMatchGroup);
                 System.out.println(matcher.group(0));
             }
         }
-        System.out.println("Сумма="+dt);
+        System.out.println("Сумма="+intSum);
     }
 }
