@@ -10,17 +10,16 @@ public class Main {
 
     public static void main(String[] args) throws IOException
     {
-        String regExp = REGEXP_CONST;
-        Integer intSum=0;
+        int intSum=0;
         System.out.print("Введите текст:");
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String[] arraySplitText = reader.readLine().split(" ");
         for(String splitText: arraySplitText){
-            Pattern pattern = Pattern.compile(regExp);
+            Pattern pattern = Pattern.compile(REGEXP_CONST);
             Matcher matcher = pattern.matcher(splitText);
             while (matcher.find()) {
                 String sMatchGroup = (matcher.group(0));
-                intSum=intSum+Integer.valueOf(sMatchGroup);
+                intSum=intSum+Integer.parseInt(sMatchGroup);
                 System.out.println(matcher.group(0));
             }
         }
