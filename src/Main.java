@@ -12,8 +12,8 @@ public class Main {
     {
         int intSum=0;
         System.out.print("Введите текст:");
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        String[] arraySplitText = reader.readLine().split(" ");
+        BufferedReader buffReader = new BufferedReader(new InputStreamReader(System.in));
+        String[] arraySplitText = buffReader.readLine().split(" ");
         for(String splitText: arraySplitText){
             Pattern pattern = Pattern.compile(REGEXP_CONST);
             Matcher matcher = pattern.matcher(splitText);
