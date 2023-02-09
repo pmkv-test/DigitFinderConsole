@@ -7,15 +7,18 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         int intSum = 0;
-        for (String splitText : args) {
+
+        if (args.length > 0) {
             Pattern pattern = Pattern.compile(REGEXP_CONST);
-            Matcher matcher = pattern.matcher(splitText);
+            Matcher matcher = pattern.matcher(args[0]);
+
             while (matcher.find()) {
-                String sMatchGroup = (matcher.group(0));
-                intSum = intSum + Integer.parseInt(sMatchGroup);
+                String sMatchGroup = matcher.group(0);
+                intSum += Integer.parseInt(sMatchGroup);
                 System.out.println(matcher.group(0));
             }
         }
+
         System.out.println("Total=" + intSum);
     }
 }
